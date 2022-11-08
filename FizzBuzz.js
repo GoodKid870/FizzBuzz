@@ -2,6 +2,8 @@
  * Implementing FizzBuzz in Javascript
  */
 
+
+// № 1
 let array
 array = []
 for (let j = 0; j < 101; j++) {
@@ -20,5 +22,38 @@ function fizzBuzz(arr){
     } return console.log(arr)
 }
 
-fizzBuzz([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100])
 fizzBuzz(array)
+//
+
+// № 2
+function fizzBuzz (n) {
+    const answer = []
+
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0)
+            answer.push("FizzBuzz")
+        else if (i % 3 == 0)
+            answer.push("Fizz")
+        else if (i % 5 == 0)
+            answer.push("Buzz")
+        else
+            answer.push(i.toString())
+    }
+
+    return answer
+};
+console.log(fizzBuzz(100));
+//
+
+// № 3
+const FizzBuzz = n => ({
+    true: n,
+    [ n % 5 === 0]: "Buzz",
+    [ n % 3 === 0]: "Fizz",
+    [ n % 15 === 0]: "FizzBuzz",
+    [ n === 0 ]: 0,
+}).true
+
+const ThisIsAFizzBuzz = n => [...Array(n).keys()].forEach(n => console.log("Result: ", FizzBuzz(n)))
+ThisIsAFizzBuzz(100)
+//
